@@ -1,0 +1,29 @@
+1-
+num = input("Digite uma lista de números separados por espaços: ")
+lista = [float(n) for n in num.split()]
+resultado = sum(lista)
+print(f"A soma de todos os númeors é: {resultado}")
+
+2-
+num = input("Digite uma lista de valores booleanos (true ou false) separados por espaços: ")
+lista = [valor.lower() == 'true' for valor in num.split()]
+if all(lista) == True:
+    print("Todos valores da lista são verdadeiros")
+else:
+    print("A lista contém um ou mais elementos falsos")
+
+3-
+num = input("Digite qualquer coisa: ")
+def entrada(num):
+    if num.lower() == 'true' or num.lower() == 'false':
+        return "Boleana"
+    elif num.isdigit() == True:
+        return "Inteiro"
+    else:
+        try:
+            float(num)
+            return "Float"
+        except ValueError:
+            return "String"
+resposta = entrada(num)
+print(f"A entrada {num} é do tipo: {resposta}")
